@@ -1,0 +1,53 @@
+{
+  "name": "miso",
+  "version": "0.1.0",
+  "author": "Suklaaty",
+  "description": "Miso in meant to be a simple and fast alternative to other website analytics that purposely handicap the functionality and accuracy of the data.",
+  "homepage": "https://suklaaty.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suklaaty/miso.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run check-env && npm run build-db && next build && npm run geolite2",
+    "start": "next start",
+    "geolite2": "node -e \"import('geolite2-redist').then(geolite => geolite.downloadDbs())\"",
+    "check-env": "node scripts/check-env.js",
+    "build-db": "npx prisma migrate deploy",
+    "lint": "next lint --quiet"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.19",
+    "@mui/material": "^5.14.20",
+    "@mui/x-data-grid": "^6.18.4",
+    "@prisma/client": "^5.11.0",
+    "@react-jvectormap/core": "^1.0.4",
+    "@react-jvectormap/world": "^1.1.2",
+    "apexcharts": "^3.45.1",
+    "bcrypt": "^5.1.1",
+    "bowser": "^2.11.0",
+    "dotenv": "^16.4.5",
+    "geolite2-redist": "^3.0.4",
+    "isbot": "^4.3.0",
+    "jose": "^5.2.0",
+    "jquery": "^3.7.1",
+    "jsonwebtoken": "^9.0.2",
+    "maxmind": "^4.3.18",
+    "nanoid": "^5.0.4",
+    "next": "^14.1.1",
+    "notistack": "^3.0.1",
+    "prisma": "^5.11.0",
+    "react": "^18.2.0",
+    "react-apexcharts": "^1.4.1",
+    "react-datepicker": "^4.25.0",
+    "react-dom": "^18.2.0",
+    "ua-parser-js": "^2.0.0-beta.1"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "^14.1.1"
+  }
+}
